@@ -31,7 +31,8 @@ window.addEventListener('load', () => {
     gsap.fromTo('#header', { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' });
     gsap.fromTo('.main-image-container', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, delay: 0.2, ease: 'power2.out' });
     const icons = document.querySelectorAll('.icon');
-    gsap.fromTo(icons, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, delay: 0.4, stagger: 0.05, ease: 'power2.out' });
+    gsap.fromTo(icons, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, delay: 0.2, stagger: 0.05, ease: 'power2.out' });
+    gsap.fromTo('.main-section-title', { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, delay: 0.2, ease: 'power2.out' });
 });
 
 
@@ -70,3 +71,27 @@ function showSection(sectionId, sectionName) {
         showBottomNav();
     }});
 }
+
+
+/* *********************************| وضع الليل و النهار |********************************* */
+// التحكم بوضع الليل والنهار
+const toggleSwitch = document.getElementById('theme-switch');
+
+// استرجاع الإعداد المحفوظ
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+    toggleSwitch.checked = savedTheme === 'dark';
+}
+
+// تبديل الوضع وحفظه في التخزين المحلي
+toggleSwitch.addEventListener('change', () => {
+    const isDarkMode = toggleSwitch.checked;
+    document.body.classList.toggle('dark-mode', isDarkMode);
+
+    // حفظ الإعداد في localStorage
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+    // تأثير GSAP لتغيير الوضع
+    gsap.fromTo('body', { opacity: 0.5 }, { opacity: 1, duration: 0.5 });
+});

@@ -29,6 +29,11 @@
                 <img src="assets/Images/Education-cuate.svg" alt="طلاب" class="main-image">
             </div>
         </section>
+        
+        <div class="main-section-title">
+            <h2>الاقسام الرئيسية</h2>
+        </div>
+
         <section class="icons-section mt-4">
             <div class="icon" onclick="showSection('lectures', 'المحاضرات')">
                 <img src="assets/Images/pdf.png" alt="المحاضرات">
@@ -115,6 +120,10 @@
     <!-- ================| صفحة الإعدادات |================ -->
     <section id="settings" class="hidden internal-section">
         <h2>صفحة الإعدادات</h2>
+        <label class="toggle-switch">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider"></span>
+        </label>
     </section>
 
     <!-- ================| شريط التنقل السفلي |================ -->
@@ -126,13 +135,13 @@
         <div class="nav-icon" onclick="showSection('summaries', 'الملخصات')">
             <i class="fa-solid fa-file-alt"></i>
         </div>
-    
+
 
         <div class="nav-icon center-icon" onclick="goBack()">
             <i class="fa-solid fa-home"></i>
         </div>
-    
-    
+
+
         <div class="nav-icon" onclick="showSection('videos', 'فيديوهات')">
             <i class="fa-solid fa-video"></i>
         </div>
@@ -140,7 +149,7 @@
             <i class="fa-solid fa-cogs"></i>
         </div>
     </nav>
-    
+
 
 
     <!-- ================| scripts |================ -->
