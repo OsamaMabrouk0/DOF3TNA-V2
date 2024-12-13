@@ -9,9 +9,17 @@
     <link rel="stylesheet" href="assets/CSS/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Amiri&family=Tajawal:wght@400;600&family=Reem+Kufi:wght@400;600&family=Changa:wght@400;600&family=Mada:wght@400;600&family=Almarai:wght@400;600&family=Aref+Ruqaa&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+    <!-- شاشة التحميل -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="spinner"></div>
+    <p>جاري التحميل...</p>
+</div>
+
 
     <!-- |========================| شريط الهيدر |======================== -->
     <header id="header" class="navbar navbar-expand-lg navbar-dark">
@@ -26,10 +34,11 @@
     <section id="main-page">
         <section class="main-section text-center">
             <div class="main-image-container">
-                <img src="assets/Images/Education-cuate.svg" alt="طلاب" class="main-image">
+                <img src="assets/Images/Education.svg" alt="طلاب" class="main-image" id="themeImage">
             </div>
         </section>
-        
+
+
         <div class="main-section-title">
             <h2>الاقسام الرئيسية</h2>
         </div>
@@ -117,14 +126,95 @@
         <h2>صفحة التواصل</h2>
     </section>
 
+
     <!-- ================| صفحة الإعدادات |================ -->
     <section id="settings" class="hidden internal-section">
-        <h2>صفحة الإعدادات</h2>
-        <label class="toggle-switch">
-            <input type="checkbox" id="theme-switch">
-            <span class="slider"></span>
-        </label>
+        <div class="settings-container">
+            <!-- المظهر -->
+            <div class="settings-section">
+                <h3>المظهر</h3>
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <i class="fas fa-moon"></i>
+                        <span>الوضع الليلي</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <i class="fas fa-font"></i>
+                        <span>نوع الخط</span>
+                    </div>
+                    <select id="fontFamilySelect" class="settings-select">
+                        <option value="'Cairo', sans-serif" selected>Cairo</option>
+                        <option value="'Amiri', serif">Amiri</option>
+                        <option value="'Tajawal', sans-serif">Tajawal</option>
+                        <option value="'Reem Kufi', sans-serif">Reem Kufi</option>
+                        <option value="'Changa', sans-serif">Changa</option>
+                        <option value="'Mada', sans-serif">Mada</option>
+                        <option value="'Almarai', sans-serif">Almarai</option>
+                        <option value="'Aref Ruqaa', serif">Aref Ruqaa</option>
+                    </select>
+                </div>
+                
+                
+
+            </div>
+        </div>
+
+        <!-- التخصيص -->
+        <div class="settings-section">
+            <h3>التخصيص</h3>
+            <div class="setting-item">
+                <div class="setting-info">
+                    <i class="fas fa-language"></i>
+                    <span>اللغة</span>
+                </div>
+                <select id="languageSelect" class="settings-select">
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <i class="fas fa-font"></i>
+                    <span>حجم الخط</span>
+                </div>
+                <select id="fontSizeSelect" class="settings-select">
+                    <option value="0.8">صغير</option>
+                    <option value="1" selected>متوسط</option>
+                    <option value="1.2">كبير</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- معلومات التطبيق -->
+        <div class="settings-section">
+            <h3>حول التطبيق</h3>
+            <div class="setting-item">
+                <div class="setting-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span>إصدار التطبيق</span>
+                </div>
+                <span class="version-number">2.0.0</span>
+            </div>
+        </div>
+
+        <!-- زر حذف البيانات -->
+        <div class="danger-zone">
+            <button class="delete-data-btn">
+                <i class="fa-solid fa-rotate-right"></i>
+                اعادة تعين الاعدادات
+            </button>
+        </div>
+        </div>
     </section>
+
+
 
     <!-- ================| شريط التنقل السفلي |================ -->
     <nav id="bottom-nav" class="hidden">
@@ -154,7 +244,10 @@
 
     <!-- ================| scripts |================ -->
     <script src="assets/JavaScript/script.js"></script>
+    <script src="assets/JavaScript/settings.js"></script>
+    <script src="assets/JavaScript/update.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
