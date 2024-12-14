@@ -5,8 +5,7 @@
     /* ألوان وضع النهار */
     --bg-color: #f8f9fa;
     --text-color: #212529;
-    --primary-color: #001427;
-    /* #d90429 */
+    --primary-color: #001427; /* #d90429 */
     --secondary-color: #ffffff;
     --icon-bg-color: #FDFCF9;
     --border-color: #ced4da;
@@ -16,8 +15,7 @@
     /* ألوان وضع الليل */
     --bg-color-dark: #121212;
     --text-color-dark: #e0e0e0;
-    --primary-color-dark: #0077b6;
-    /* #dd1c1a */
+    --primary-color-dark: #0077b6; /* #dd1c1a */
     --secondary-color-dark: #1f1f1f;
     --icon-bg-color-dark: #1e1e1e;
     --border-color-dark: #333333;
@@ -85,6 +83,8 @@ header.navbar {
     box-shadow: var(--shadow);
     padding: 10px;
     transition: background-color 0.3s ease;
+    min-height: 52px;
+
 }
 
 body.dark-mode header.navbar {
@@ -96,6 +96,29 @@ header h1 {
     font-size: var(--font-size-title);
     margin: 0;
     padding: 10px 0;
+}
+
+#back-icon {
+    margin-left: auto;
+}
+
+.hamburger {
+    margin-right: auto;
+}
+
+.hamburger,
+#back-icon {
+    flex-shrink: 0;
+}
+
+#header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: var(--font-size-title);
+    margin: 0;
+    white-space: nowrap;
 }
 
 
@@ -313,215 +336,4 @@ body.dark-mode #bottom-nav {
 body.dark-mode .center-icon,
 body.dark-mode .settings-section h3 {
     color: var(--primary-color-dark);
-}
-
-/* *********************************| صفحة الإعدادات |********************************* */
-
-
-.settings-section {
-    background: var(--bg-color);
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.settings-section h3 {
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    font-size: 1.2em;
-}
-
-.setting-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.setting-item:last-child {
-    border-bottom: none;
-}
-
-.setting-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.setting-info i {
-    color: var(--primary-color);
-    font-size: 1.2em;
-}
-
-body.dark-mode .setting-info i {
-    color: var(--primary-color-dark);
-}
-
-body.dark-mode .settings-section,
-body.dark-mode .settings-select {
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
-}
-
-body.dark-mode .settings-section {
-    background-color: var(--icon-bg-color-dark);
-
-}
-
-body.dark-mode .setting-item p,
-body.dark-mode .setting-item label,
-body.dark-mode .setting-item h3 {
-    color: var(--text-color-dark);
-}
-
-/* *********************************| مفتاح التبديل |********************************* */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-input:checked+.slider {
-    background-color: var(--primary-color);
-}
-
-input:checked+.slider:before {
-    transform: translateX(26px);
-}
-
-body.dark-mode input:checked+.slider {
-    background-color: var(--primary-color-dark);
-}
-
-/* *********************************| القائمة المنسدلة |********************************* */
-.settings-select {
-    padding: 2px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-color);
-    cursor: pointer;
-    text-align: center;
-}
-
-body.dark-mode .settings-select {
-    border: 1px solid var(--border-color-dark);
-
-}
-
-/* *********************************| منطقة الحذف |********************************* */
-.danger-zone {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.delete-data-btn {
-    background-color: #f44336;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.delete-data-btn:hover {
-    background-color: #d32f2f;
-}
-
-
-
-/* شاشة التحميل */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
-
-body.dark-mode .loading-screen {
-    background-color: var(--bg-color-dark);
-}
-
-/* الدائرة الدوارة */
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 6px solid rgba(0, 0, 0, 0.1);
-    border-top-color: var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-body.dark-mode .spinner {
-    border: 6px solid rgba(255, 255, 255, 0.1);
-    border-top-color: var(--primary-color-dark);
-}
-
-/* النص */
-.loading-screen p {
-    margin-top: 20px;
-    font-size: 16px;
-    color: var(--text-color);
-}
-
-body.dark-mode .loading-screen p {
-    color: var(--text-color-dark);
-}
-
-/* حركة الدوران */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }

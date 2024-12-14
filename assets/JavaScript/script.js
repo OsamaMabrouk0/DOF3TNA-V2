@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
         loadingScreenHidden = true;
 
         initializeMainPageTransitions();
-    }, 0); 
+    }, 0);
 });
 
 /* *********************************| تأثيرات الصفحة الرئيسية |********************************* */
@@ -26,32 +26,61 @@ function initializeMainPageTransitions() {
     gsap.fromTo(mainSectionTitle, { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, delay: 0.2, ease: 'power2.out' });
 }
 
+// تحديد عناصر القائمة والأيقونة
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
+
+/* *********************************| التحكم في القائمة الجانبية |********************************* */
+// التحكم في ظهور القائمة الجانبية عند الضغط على الأيقونة
+menuToggle.addEventListener('change', () => {
+    if (menuToggle.checked) {
+        sidebar.classList.add('active'); // إظهار القائمة
+    } else {
+        sidebar.classList.remove('active'); // إخفاء القائمة
+    }
+});
+
 /* *********************************| التنقل إلى الأقسام الداخلية |********************************* */
 function showSection(sectionId, sectionName) {
     if (!loadingScreenHidden) return;
 
     const sections = document.querySelectorAll('.internal-section');
+    const hamburgerIcon = document.querySelector('.hamburger'); // تحديد أيقونة الـ hamburger
 
+    // إخفاء جميع الأقسام
     sections.forEach(section => {
         if (!section.classList.contains('hidden')) {
-            gsap.to(section, { opacity: 0, duration: 0.1, onComplete: () => {
-                section.classList.add('hidden');
-            }});
+            gsap.to(section, {
+                opacity: 0, duration: 0.1, onComplete: () => {
+                    section.classList.add('hidden');
+                }
+            });
         }
     });
 
-    gsap.to('#main-page', { opacity: 0, duration: 0.1, onComplete: () => {
-        document.getElementById('main-page').style.display = 'none';
+    // إظهار القسم الحالي
+    gsap.to('#main-page', {
+        opacity: 0, duration: 0.1, onComplete: () => {
+            document.getElementById('main-page').style.display = 'none';
 
-        const section = document.getElementById(sectionId);
-        section.classList.remove('hidden');
-        document.getElementById('header-title').textContent = sectionName;
-        document.getElementById('back-icon').style.display = 'block';
+            const section = document.getElementById(sectionId);
+            section.classList.remove('hidden');
+            document.getElementById('header-title').textContent = sectionName;
+            document.getElementById('back-icon').style.display = 'block';
 
-        gsap.fromTo(section, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.1 });
+            // التحكم في ظهور أو إخفاء أيقونة الـ hamburger
+            if (sectionId === 'lectures') {
+                hamburgerIcon.classList.add('visible'); // إظهار الأيقونة في صفحة المحاضرات
+            } else {
+                hamburgerIcon.classList.remove('visible'); // إخفاء الأيقونة في الصفحات الأخرى
+                // إغلاق القائمة الجانبية تلقائيًا عند الانتقال لصفحة أخرى
+                closeSidebar();
+            }
 
-        showBottomNav();
-    }});
+            gsap.fromTo(section, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.1 });
+            showBottomNav();
+        }
+    });
 }
 
 /* *********************************| العودة إلى الصفحة الرئيسية |********************************* */
@@ -59,19 +88,36 @@ function goBack() {
     if (!loadingScreenHidden) return;
 
     const sections = document.querySelectorAll('.internal-section');
+    const hamburgerIcon = document.querySelector('.hamburger'); // تحديد أيقونة الـ hamburger
 
-    gsap.to(sections, { opacity: 0, duration: 0.1, onComplete: () => {
-        sections.forEach(section => section.classList.add('hidden'));
+    // إخفاء جميع الأقسام
+    gsap.to(sections, {
+        opacity: 0, duration: 0.1, onComplete: () => {
+            sections.forEach(section => section.classList.add('hidden'));
 
-        document.getElementById('main-page').style.display = 'block';
-        document.getElementById('header-title').textContent = 'دفعتنا';
-        document.getElementById('back-icon').style.display = 'none';
+            // العودة إلى الصفحة الرئيسية
+            document.getElementById('main-page').style.display = 'block';
+            document.getElementById('header-title').textContent = 'دفعتنا';
+            document.getElementById('back-icon').style.display = 'none';
 
-        gsap.fromTo('#main-page', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.1 });
+            // إخفاء أيقونة الـ hamburger عند العودة إلى الصفحة الرئيسية
+            hamburgerIcon.classList.remove('visible');
 
-        hideBottomNav();
-    }});
+            // إغلاق القائمة الجانبية تلقائيًا عند العودة
+            closeSidebar();
+
+            gsap.fromTo('#main-page', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.1 });
+            hideBottomNav();
+        }
+    });
 }
+
+/* *********************************| إغلاق القائمة الجانبية |********************************* */
+function closeSidebar() {
+    menuToggle.checked = false; // إعادة زر القائمة إلى حالته الافتراضية
+    sidebar.classList.remove('active'); // إخفاء القائمة الجانبية
+}
+
 
 /* *********************************| شريط التنقل السفلي |********************************* */
 function showBottomNav() {
