@@ -42,10 +42,8 @@
 
 ---
 
-## 🛠️ Run Locally
 
-1. Clone the repository  
-```bash
+
 git clone https://github.com/OsamaMabrouk0/DOF3TNA-V2.git
 <h1 align="center">📘 DOF3TNA - Version 2 | دفعتنا - الإصدار الثاني</h1>
 <h3 align="center">🔹 First-Year Students - Faculty of Commerce - Alexandria University | طلاب الفرقة الأولى - كلية التجارة - جامعة الإسكندرية 🔹</h3>
@@ -100,9 +98,6 @@ git clone https://github.com/OsamaMabrouk0/DOF3TNA-V2.git
 
 ---
 
-## 🛠️ Run Locally | 🛠️ تشغيل محلي
 
-1. Clone the repository  
-   1. انسخ المستودع إلى جهازك
-```bash
-git clone https://github.com/OsamaMabrouk0/DOF3TNA-V2.git
+
+
