@@ -1,38 +1,46 @@
-<h1 align="center">📘 DOF3TNA V2</h1>
-<h3 align="center">🔹 First-Year Commerce | Alexandria University 🔹</h3>
+<h1 align="center">📘 دفعتنا - الإصدار الثاني</h1>
+<h3 align="center">🔹 طلاب الفرقة الأولى - كلية التجارة - جامعة الإسكندرية 🔹</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-2.0-blue" />
-  <img src="https://img.shields.io/badge/Status-Live-brightgreen" />
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
+  <img src="https://img.shields.io/badge/الإصدار-2.0-blue" />
+  <img src="https://img.shields.io/badge/الحالة-نشط-brightgreen" />
+  <img src="https://img.shields.io/badge/الرخصة-MIT-lightgrey" />
 </p>
 
 ---
 
-## 🧠 What is DOF3TNA V2?
+## 🧠 ما هو مشروع "دفعتنا V2"؟
 
-> A web-based platform designed to help **first-year commerce students at Alexandria University** access lectures, tutorials, and learning materials in one organized place.
+> منصة ويب مصممة خصيصًا لطلاب **الفرقة الأولى بكلية التجارة – جامعة الإسكندرية**، تهدف لتجميع المحاضرات، والمصادر التعليمية، والفيديوهات في مكان واحد منظم وسهل الاستخدام.
 
-🌟 Whether you're revising, watching lectures, or browsing playlists, **DOF3TNA V2** is built to simplify your academic life.
-
----
-
-## 🌐 Live Website
-
-👉 [Click here to visit](https://osamamabrouk0.github.io/DOF3TNA-V2/)  
-📱 Fully responsive | 🖥️ Desktop & Mobile friendly
+🌟 سواء كنت تراجع أو تشاهد محاضرات أو تبحث عن قوائم تشغيل، منصة **دفعتنا V2** هتسهل عليك مشوارك الجامعي.
 
 ---
 
-## 🚀 Key Features
+## 🌐 الموقع الرسمي
 
-✅ Clean, simple, and fast user interface  
-✅ Categorized playlists by subjects and materials  
-✅ Built with HTML, CSS, and JavaScript  
-✅ Easily accessible via GitHub Pages  
-✅ Supports offline use with PWA manifest  
+🔗 [اضغط هنا للدخول](https://osamamabrouk0.github.io/DOF3TNA-V2/)  
+📱 متجاوب تمامًا | 💻 يعمل على جميع الأجهزة
 
 ---
 
-## 📁 File Structure
+## 📱 نسخة الأندرويد
+
+> يمكنك تحميل تطبيق دفعتنا مباشرة لهاتفك الأندرويد:  
+📦 [اضغط هنا لتحميل التطبيق](https://github.com/OsamaMabrouk0/DOF3TNA-v2-App/releases/download/v2.0.0/DOF3TNA-v2.apk)  
+✅ حجمه صغير – سريع – بدون إعلانات
+
+---
+
+## 🚀 أهم المميزات
+
+✅ تصميم بسيط وسريع وسهل الاستخدام  
+✅ تصنيف المحتوى حسب المواد والمحاضرات  
+✅ مبني باستخدام HTML + CSS + JavaScript  
+✅ يعمل مباشرة من خلال GitHub Pages  
+✅ يدعم وضع التصفح دون إنترنت (PWA)
+
+---
+
+## 📁 هيكل الملفات
 
