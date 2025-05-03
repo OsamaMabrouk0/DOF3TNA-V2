@@ -1,0 +1,39 @@
+[
+    {
+        "_comment": " 'Video= false'  'PlayList= true' "
+    },
+    {
+        "subject": "احصاء وصفي",
+        "videoId": "",
+        "isPlaylist": true
+    },
+    {
+        "subject": "اقتصاد كلي",
+        "videoId": "PLnKq9ZBuX35iWF4ifk8Kk-SvXWRZsJZjW",
+        "isPlaylist": true
+    },
+    {
+        "subject": "سلوك تنظيمي",
+        "videoId": "PL_i4oGzXQNJqg57grwihY9a9tehSnsWwB",
+        "isPlaylist": true
+    },    {
+        "subject": "ملخص سلوك تنظيمي",
+        "videoId": "MwKe0kSOl0o",
+        "isPlaylist": false
+    },
+    {
+        "subject": "قانون الاعمال",
+        "videoId": "PLeZ-5i4tokqUxb7UbsM-AGoTRBPXGmdRE",
+        "isPlaylist": true
+    },
+    {
+        "subject": "مبادئ المحاسبة الادارية",
+        "videoId": "",
+        "isPlaylist": true
+    },
+    {
+        "subject": "مهارات اللغة و الاتصال",
+        "videoId": "",
+        "isPlaylist": true
+    }
+]
